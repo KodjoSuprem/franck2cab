@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Exécuter le script de téléchargement YouTube Audio",
+      "type": "shell",
+      "command": "bash yt_channel_audio.sh <URL_DE_LA_CHAINE_YOUTUBE>",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
