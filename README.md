@@ -1,4 +1,4 @@
-# yt_channel_audio
+# mp3yt
 
 Ce projet propose un script Bash pour télécharger toutes les pistes audio d'une chaîne YouTube, convertir en MP3, ajouter la miniature comme pochette et les métadonnées.
 
