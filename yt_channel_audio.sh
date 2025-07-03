@@ -21,5 +21,6 @@ if [ -z "$1" ]; then
 fi
 
 URL="$1"
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-yt-dlp --download-archive download_archive.txt -f bestaudio --embed-metadata --extract-audio --audio-format mp3 --embed-thumbnail --output "%(title)s.%(ext)s" "$URL" 
+yt-dlp --download-archive "$SCRIPT_DIR/download_archive.txt" -f bestaudio --embed-metadata --extract-audio --audio-format mp3 --embed-thumbnail --output "%(title)s.%(ext)s" "$URL"
