@@ -22,4 +22,4 @@ fi
 
 URL="$1"
 
-yt-dlp --download-archive download_archive.txt -f bestaudio --parse-metadata "description:(?s)(?P<meta_comment>.+)" --embed-metadata --extract-audio --audio-format mp3 --embed-thumbnail --output "%(title)s.%(ext)s" "$URL" 
+yt-dlp --download-archive download_archive.txt -f bestaudio --embed-metadata --extract-audio --audio-format mp3 --embed-thumbnail --output "%(title)s.%(ext)s" "$URL" 
