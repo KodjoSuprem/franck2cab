@@ -2,7 +2,7 @@
 
 
 
-DIR="."
+DIR="$PWD"
 TMPDIR=$(mktemp -d)
 trap 'rm -rf "$TMPDIR"' EXIT
 
