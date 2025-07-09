@@ -44,3 +44,19 @@ for id in "${!archive_ids[@]}"; do
         echo "❌ https://www.youtube.com/watch?v=$id"
     fi
 done
+
+# Nettoyer l'archive : supprimer les entrées dont l'ID n'existe plus sur le disque
+if [[ -w "$archive_file" ]]; then
+    tmp_archive="${archive_file}.tmp"
+    cp "$archive_file" "$tmp_archive"
+    for id in "${!archive_ids[@]}"; do
+        if [[ -z "${disk_ids[$id]}" ]]; then
+            # Supprimer la ligne contenant cet ID
+            sed -i '' "/$id/d" "$tmp_archive"
+        fi
+    done
+    mv "$tmp_archive" "$archive_file"
+    echo "🧹 $archive_file nettoyé : entrées orphelines supprimées."
+else
+    echo "⚠️  Impossible de modifier $archive_file (droit en écriture manquant)."
+fi
