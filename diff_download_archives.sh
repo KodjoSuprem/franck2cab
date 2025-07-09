@@ -52,7 +52,7 @@ if [[ -w "$archive_file" ]]; then
     for id in "${!archive_ids[@]}"; do
         if [[ -z "${disk_ids[$id]}" ]]; then
             # Supprimer la ligne contenant cet ID
-            sed -i '' "/$id/d" "$tmp_archive"
+            sed -i "/$id/d" "$tmp_archive"
         fi
     done
     mv "$tmp_archive" "$archive_file"
